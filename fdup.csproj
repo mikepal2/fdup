@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>False</GenerateDocumentationFile>
+    <Authors>Michael Pavlushik</Authors>
   </PropertyGroup>
 
   <ItemGroup>
