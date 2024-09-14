@@ -30,11 +30,8 @@ jobs:
       run: dotnet test --no-build --verbosity normal
 
     - name: Publish
-      run: |
-        dotnet publish fdup.csproj -o publish\win-x86 -r win-x86 --no-self-contained /p:PublishSingleFile=true
-        dotnet publish fdup.csproj -o publish\win-x64 -r win-x86 --no-self-contained /p:PublishSingleFile=true
-        dotnet publish fdup.csproj -o publish\linux-x86 -r linux-x86 --no-self-contained /p:PublishSingleFile=true
-        dotnet publish fdup.csproj -o publish\linux-x64 -r linux-x64 --no-self-contained /p:PublishSingleFile=true
+      shell: pwsh
+      run: foreach ($rid in @("win-x86")) { dotnet publish fdup.csproj -o publish\$rid -r $rid --no-self-contained /p:PublishSingleFile=true }
 
     - name: Release
       uses: softprops/action-gh-release@v2
