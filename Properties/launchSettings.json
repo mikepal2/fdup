@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "filedup": {
+      "commandName": "Project",
+      "commandLineArgs": "find dups a"
+    }
+  }
+}
