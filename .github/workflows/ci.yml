@@ -31,7 +31,7 @@ jobs:
 
     - name: Publish
       shell: pwsh
-      run: foreach ($rid in @("win-x86","win-x64","linux-x64","linux-arm64", "osx-x64", "osx-arm64")) { dotnet publish fdup.csproj -o publish\$rid -r $rid --no-self-contained /p:PublishSingleFile=true }
+      run: foreach ($rid in @("win-x86")) { dotnet publish fdup.csproj -o publish\$rid -r $rid --no-self-contained /p:PublishSingleFile=true }
 
     - name: Release
       uses: softprops/action-gh-release@v2
