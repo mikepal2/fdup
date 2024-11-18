@@ -9,18 +9,18 @@ internal class Program
         JSON
     }
 
-    [RootCommand(description: "Search for duplicate files in specified directory")]
+    [RootCommand(Description = "Search for duplicate files in specified directory")]
     public static async ValueTask<int> FindDuplicateFiles(
-        [Argument(description: "Directory to search for duplicate files")]
+        [Argument(Description = "Directory to search for duplicate files")]
         DirectoryInfo path,
 
-        [Option(name: "out", aliases: ["o"], helpName: "filepath", description: "Output file path")]
+        [Option(Name = "out", Aliases = "o", HelpName = "filepath", Description = "Output file path")]
         FileInfo? outFile = null,
 
-        [Option(aliases: ["f"], description: "Set output format")]
+        [Option(Name = "format", Aliases = "f", Description = "Set output format")]
         OutputFormat format = OutputFormat.Text,
 
-        [Option(name: "hardlinks", aliases: ["h"], description: "Include hardlinks")]
+        [Option(Name = "hardlinks", Aliases = "h", Description = "Include hardlinks")]
         bool includeHardlinks = false
         )
     {
